@@ -1,19 +1,16 @@
-'use strict';
-function Addon(){
-  this.name = 'ember-cli-podify';
-}
-
-Addon.prototype.includedCommands = function(){
+module.exports = {
+  this.name = 'ember-cli-podify',
+  includedCommands: function() {
   return {
-    'Podify': {
-      name: 'podify',
-      aliases: ['pod','pf']
+    'podify': require('./lib/commands/podify')
     },
-    'Depodify': {
-      name: 'depodify',
-      aliases: ['depod','dp']
+    'depodify': require('./lib/commands/depodify')
     }
   }
 }
+/*
+  returns files for defined path
+*/
+function files(){
 
-module.exports = Addon;
+}
