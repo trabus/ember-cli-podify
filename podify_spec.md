@@ -202,3 +202,23 @@ Running `ember depodify` would revert to the original format.
 
 ### Risks
 Renaming the assets should be pretty simple, and carries almost no risk of breaking an app. The issue that could break would be when a module has been included with an explicit path. We would need to re-path references to modules that have changed, but that as well is a fairly simple task.
+
+### Testing
+#### fixtures
+* podModulePrefix
+* modulePrefix
+* type only
+* pods only
+* some pods, some type
+* import pods (for renaming)
+
+#### tests
+* `ember podify`
+	* ignores files already in pod format (noop)
+	* renames imports for changed paths
+	
+* `ember podify foo`
+
+* `ember depodify`
+
+* `ember depodify foo`
