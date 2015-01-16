@@ -35,6 +35,8 @@ Process steps:
 		* root path
 		* resource path
 		* suffix
+	* components require a special case
+		* component templates
 		
 	* isolate chunks as tokens to swap
 		* `app/routes/user.js`
@@ -57,6 +59,16 @@ Process steps:
 			* `routes`
 			* `user`
 			* `.js`
+		* `app/components/taco-shell.js`
+			* `app`
+			* `components`
+			* `taco-shell`
+			* `.js`
+		* `app/templates/components/taco-shell.hbs`
+			* `app`
+			* `templates/components`
+			* `taco-shell`
+			* `.hbs`
 	* use properties to create values to replace tokens
 
 ### Example
@@ -210,6 +222,7 @@ Renaming the assets should be pretty simple, and carries almost no risk of break
 * type only
 * pods only
 * some pods, some type
+* custom pod type
 * import pods (for renaming)
 
 #### tests
