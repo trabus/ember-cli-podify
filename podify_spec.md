@@ -6,7 +6,7 @@ Because the two structures are known, transformation between the two should be a
 ### Command specs
 The command(s) should work with or without arguments. When no argument is passed, the entire app will be scanned for resources that can be converted. When an arguments are passed, the resources named will converted.
 
-If a resource already has assets in the format to be converted to, the command will pass over the resource. 
+If a resource already has assets in the format to be converted to, the command will pass over the resource.
 
 ### Command process
 Process steps:
@@ -37,13 +37,13 @@ Process steps:
 		* suffix
 	* components require a special case
 		* component templates
-		
+
 	* isolate chunks as tokens to swap
 		* `app/routes/user.js`
 			* `app`
 			* `routes`
 			* `user`
-			* `.js` 
+			* `.js`
 		* `app/routes/users/profile/edit.js`
 			* `app`
 			* `users/profile/edit`
@@ -74,10 +74,10 @@ Process steps:
 ### Example
 
 ```
-ember podify 
+ember podify
 ember podify taco
 ember podify taco burrito chimichanga
-ember depodify 
+ember depodify
 ```
 
 Given the following example:
@@ -90,7 +90,7 @@ app
   |	  ├- burrito.js
   |	  └- taco.js
   ├- mixins
-  |	  └- beef.js 
+  |	  └- beef.js
   ├- models
   |	  ├- burrito.js
   |	  └- taco.js
@@ -103,7 +103,7 @@ app
   └- views
   	  ├- burrito.js
   	  └- taco.js
-  
+
 tests
  └- unit
   	 ├- adapters
@@ -112,7 +112,7 @@ tests
  	 |	  ├- burrito-test.js
  	 |	  └- taco-test.js
   	 ├- mixins
-  	 |	  └- beef-test.js 
+  	 |	  └- beef-test.js
 	 ├- models
  	 |	  ├- burrito-test.js
  	 |	  └- taco-test.js
@@ -131,7 +131,7 @@ app
   ├- controllers
   |	  └- burrito.js
   ├- mixins
-  |	  └- beef.js 
+  |	  └- beef.js
   ├- models
   |	  └- burrito.js
   ├- pods
@@ -148,13 +148,13 @@ app
   |	  └- burrito.js
   └- views
   	  └- burrito.js
-  
+
 tests
  └- unit
   	  ├- controllers
  	  |	  └- burrito-test.js
  	  ├- mixins
-  	  |	  └- beef-test.js 
+  	  |	  └- beef-test.js
  	  ├- models
  	  |	  └- burrito-test.js
  	  ├- pods
@@ -175,7 +175,7 @@ Running `ember podify` would result in the following:
 ```
 app
   ├- mixins
-  |	  └- beef.js 
+  |	  └- beef.js
   └- pods
       ├- burrito
    	  |	  ├- controller.js
@@ -190,11 +190,11 @@ app
   		  ├- route.js
      	  ├- template.js
      	  └- view.js
-  
+
 tests
  └- unit
    	  ├- mixins
-   	  |	  └- beef-test.js 
+   	  |	  └- beef-test.js
  	  └-- pods
  	      ├- burrito
  	  	  |   ├- controller-test.js
@@ -217,6 +217,7 @@ Renaming the assets should be pretty simple, and carries almost no risk of break
 
 ### Testing
 #### fixtures
+Create fixture projects with:
 * podModulePrefix
 * modulePrefix
 * type only
@@ -229,8 +230,10 @@ Renaming the assets should be pretty simple, and carries almost no risk of break
 * `ember podify`
 	* ignores files already in pod format (noop)
 	* renames imports for changed paths
-	
+
 * `ember podify foo`
+	* ignores files named foo already in pod format
+	*
 
 * `ember depodify`
 
